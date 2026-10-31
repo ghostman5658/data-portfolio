@@ -30,7 +30,7 @@ Per-pupil spending by itself is a weak predictor of math proficiency. Child pove
 
 - The sources are public and district-level. There are no student records in this folder.
 - A cross-section cannot say that raising spending would raise proficiency. Poverty, income, and spending move together.
-- The Census call needs your own key. A key was removed from this copy before it was published. Set `CENSUS_API_KEY` first. Request a free key at https://api.census.gov/data/key_signup.html.
+- The Census call needs your own key. Set `CENSUS_API_KEY` before you run the notebook. Request a free key at https://api.census.gov/data/key_signup.html.
 - The scraped cache is a snapshot of Public School Review pages. Treat it as a point-in-time extract.
 
 ## How to reproduce

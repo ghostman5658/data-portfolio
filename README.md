@@ -29,7 +29,3 @@ jupyter lab
 ```
 
 Open the project's `analysis.ipynb` and run it from that folder. The housing listings file is not in git. Download it with `projects/zip-code-sale-price-prediction/DATA.md`. The school-finance notebook reads `CENSUS_API_KEY` from the environment.
-
-## Cleanup
-
-Course-named repositories were not published. This repository is the public copy, organized by subject. See [CLEANUP.md](CLEANUP.md).
