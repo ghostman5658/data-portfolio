@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kyle Gotzman · Data portfolio</title>
+  <meta name="description" content="Kyle Gotzman is a software engineer. This portfolio covers sale-price screening, customer churn, tariff reactions, childcare, school finance, power-plant output, movie recommendations, and TSA complaints.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,620&family=Public+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#projects">Skip to projects</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top">Kyle Gotzman</a>
+      <nav aria-label="Portfolio">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap hero">
+      <p class="kicker">Applied data science</p>
+      <h1>A number only helps if someone can act on it.</h1>
+      <p class="lede">I am a software engineer. These projects price a house, flag a customer who may leave, and put public data into a form a non-analyst can use. Each one names the decision, the data, and the limit of the result.</p>
+    </div>
+
+    <div class="wrap">
+      <section class="about" id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About</h2>
+        <p>The work here sits between software and a business question. A model that is 15 percent off can still be useful as a screen. The same model is the wrong input for a loan file. I would rather publish that distinction than a leaderboard score with no audience.</p>
+        <p>Eight projects are finished. Two from the current term are still open and are marked that way. The code, the write-ups, and the rerun steps live in the <a href="https://github.com/ghostman5658/data-portfolio">data-portfolio</a> repository. Folders are named for the subject.</p>
+      </section>
+
+      <section id="projects" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Projects</h2>
+
+        <article class="project" id="zip-code-sale-price">
+          <p class="stat"><span class="num">14.8%</span><span class="stat-label">typical miss</span></p>
+          <div>
+            <h3>ZIP Code-Aware Sale Price Prediction</h3>
+            <p class="tags">Regression · Gradient boosting</p>
+            <p>Buyers, sellers, and agents need a price before an offer. A national median misses the point that an extra bathroom is not worth the same amount in every ZIP. Sales run from October 18, 2021, through May 6, 2022.</p>
+            <p>On ZIP codes with at least 20 training sales, gradient boosting is typically off by 14.8 percent, about 99,000 dollars. A model with no location is typically off by 36.5 percent. Below 20 training sales, the recommendation is to withhold a firm number. The fit is a screening tool beside recent comps, not an appraisal.</p>
+            <p class="links">
+              <a href="https://github.com/ghostman5658/data-portfolio/tree/main/projects/zip-code-sale-price-prediction">Project folder</a>
+              <a href="https://github.com/ghostman5658/data-portfolio/blob/main/projects/zip-code-sale-price-prediction/analysis.ipynb">Notebook</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project" id="telecom-churn">
+          <p class="stat"><span class="num">0.78</span><span class="stat-label">recall</span></p>
+          <div>
+            <h3>Telecom Customer Churn Prediction</h3>
+            <p class="tags">Classification · Random forest</p>
+            <p>A telecommunications company needs to know which customers are likely to cancel, and which retention actions are worth taking, before those customers leave. The file is the public IBM Telco set, 7,043 customers.</p>
+            <p>The random forest is the recommended model: recall 0.78, AUC-ROC 0.84, and F1 0.63. Contract type, early tenure, fiber service, and missing add-on services are the actionable patterns. Precision is about 0.53, so the score fits a low-cost outreach pilot better than an expensive discount for everyone the model flags.</p>
+            <p class="links">
+              <a href="https://github.com/ghostman5658/data-portfolio/tree/main/projects/telecom-customer-churn">Project folder</a>
+              <a href="https://github.com/ghostman5658/data-portfolio/blob/main/projects/telecom-customer-churn/analysis.ipynb">Notebook</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project" id="tariff-reactions">
+          <p class="stat"><span class="num">0.77</span><span class="stat-label">holdout macro F1</span></p>
+          <div>
+            <h3>Tariff Announcement Market-Reaction Classification</h3>
+            <p class="tags">Classification · Random forest</p>
+            <p>Tariff announcements do not move every industry the same way. The prepared table has 362 sector-event rows, joining daily sector ETF returns to major tariff actions from 2018 through 2025. The same-day broad-market return was kept out of the features.</p>
+            <p>Random forest was the best model, with cross-validated macro F1 of 0.781 and a holdout macro F1 of 0.774 (ROC-AUC 0.835, accuracy 0.795). Recent market volatility and sector momentum mattered at least as much as the size of the tariff.</p>
+            <p class="links">
+              <a href="https://github.com/ghostman5658/data-portfolio/tree/main/projects/tariff-announcement-market-reaction">Project folder</a>
+              <a href="https://github.com/ghostman5658/data-portfolio/blob/main/projects/tariff-announcement-market-reaction/analysis.ipynb">Notebook</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project" id="childcare">
+          <p class="stat"><span class="num">16%</span><span class="stat-label">of household income</span></p>
+          <div>
+            <h3>American Childcare Affordability</h3>
+            <p class="tags">Public data · Visualization</p>
+            <p>Families and policymakers need a plain measure of whether infant center-based care is affordable. The metric is annual cost as a share of median household income, set against the 7 percent policy benchmark. The source is the U.S. Department of Labor database, county-years from 2008 through 2018.</p>
+            <p>The median county-year burden is about 16 percent, and more than 99 percent of valid county-years exceed 7 percent. No state clears the line. The link to female labor-force participation is weak, about -0.06, so cost alone does not explain whether mothers work.</p>
+            <p class="links">
+              <a href="https://github.com/ghostman5658/data-portfolio/tree/main/projects/american-childcare-affordability">Project folder</a>
+              <a href="https://github.com/ghostman5658/data-portfolio/blob/main/projects/american-childcare-affordability/analysis.ipynb">Notebook</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project" id="school-finance">
+          <p class="stat"><span class="num">115</span><span class="stat-label">North Carolina districts</span></p>
+          <div>
+            <h3>North Carolina School Finance Data Integration</h3>
+            <p class="tags">SQL · Public data</p>
+            <p>District spending, student outcomes, and child poverty live in different public files. The project cleans the NCES F-33 finance survey for fiscal year 2023, Public School Review district pages, and Census SAIPE estimates, then joins them in SQLite on the NCES district id.</p>
+            <p>Per-pupil spending by itself is a weak predictor of math proficiency. Child poverty has a strong negative relationship with graduation rate, and median household income lines up with higher reading proficiency. Lower-income districts rely more on federal and state revenue.</p>
+            <p class="links">
+              <a href="https://github.com/ghostman5658/data-portfolio/tree/main/projects/north-carolina-school-finance">Project folder</a>
+              <a href="https://github.com/ghostman5658/data-portfolio/blob/main/projects/north-carolina-school-finance/analysis.ipynb">Notebook</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project" id="power-plant">
+          <p class="stat"><span class="num">0.96</span><span class="stat-label">R-squared</span></p>
+          <div>
+            <h3>Combined-Cycle Power Plant Output</h3>
+            <p class="tags">Regression · Clustering</p>
+            <p>Plant operators need to know which ambient conditions drive net electrical output. The UCI Combined Cycle Power Plant file has nearly 10,000 full-load hourly observations from 2006 through 2011. Predictors are temperature, exhaust vacuum, ambient pressure, and relative humidity.</p>
+            <p>Temperature and exhaust vacuum dominate output, with correlations about -0.95 and -0.87. Linear regression reaches an R-squared near 0.93. Random forest improves that to about 0.96, with RMSE about 3.31 MW. The plant also separates into low, medium, and high output regimes.</p>
+            <p class="links">
+              <a href="https://github.com/ghostman5658/data-portfolio/tree/main/projects/combined-cycle-power-plant">Project folder</a>
+              <a href="https://github.com/ghostman5658/data-portfolio/blob/main/projects/combined-cycle-power-plant/analysis.ipynb">Notebook</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project" id="movie-recommendations">
+          <p class="stat"><span class="num">10</span><span class="stat-label">similar titles</span></p>
+          <div>
+            <h3>Movie Recommendation System</h3>
+            <p class="tags">Collaborative filtering</p>
+            <p>A catalog needs a way to suggest the next movie from how people have rated titles, without relying only on genre labels. MovieLens Small has 100,836 ratings of 9,742 movies by 610 users. The model keeps movies with at least 10 ratings and ranks candidates by cosine similarity.</p>
+            <p>Given a title, the system returns the 10 most similar movies. Franchise titles and films from a similar era cluster together. The matrix is about 98 percent empty, so new titles and new users are a cold-start problem, and a full similarity matrix would not be the production design.</p>
+            <p class="links">
+              <a href="https://github.com/ghostman5658/data-portfolio/tree/main/projects/movie-recommendation">Project folder</a>
+              <a href="https://github.com/ghostman5658/data-portfolio/blob/main/projects/movie-recommendation/analysis.ipynb">Notebook</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project" id="tsa-complaints">
+          <p class="stat"><span class="num">4 hubs</span><span class="stat-label">lead the volume</span></p>
+          <div>
+            <h3>TSA Complaint Trends</h3>
+            <p class="tags">Visualization · Story</p>
+            <p>Travelers need a practical view of where and when airport-security complaints pile up. TSA complaint releases by airport, category, and subcategory were joined to a public airport-code table. The piece is a visual brief: map, heat map, and box plot.</p>
+            <p>LAX, JFK, ORD, and SFO lead complaint volume. Damaged or missing checked baggage is the largest subcategory, and summer months spike at major hubs. The recommendation is extra time at those airports, valuables in a carry-on, and a filed complaint when screening or baggage handling goes wrong.</p>
+            <p class="links">
+              <a href="https://github.com/ghostman5658/data-portfolio/tree/main/projects/tsa-complaint-trends">Project folder</a>
+              <a href="https://github.com/ghostman5658/data-portfolio/blob/main/projects/tsa-complaint-trends/analysis.ipynb">Notebook</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project project-pending" id="open-project-2">
+          <p class="stat"><span class="num">—</span><span class="stat-label">not started</span></p>
+          <div>
+            <h3>Applied Data Science Project 2</h3>
+            <p class="tags">Placeholder</p>
+            <p>The second project in the current term has not been assigned. It will follow the same shape as the work above: a question a domain audience can use, a documented data source, a model, and a recommendation.</p>
+          </div>
+        </article>
+
+        <article class="project project-pending" id="open-project-3">
+          <p class="stat"><span class="num">—</span><span class="stat-label">not started</span></p>
+          <div>
+            <h3>Applied Data Science Project 3</h3>
+            <p class="tags">Placeholder</p>
+            <p>The third project in the current term has not been assigned. Topic, data, and methods will be chosen when it is.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <p>GitHub is the reliable way to reach me: <a href="https://github.com/ghostman5658">github.com/ghostman5658</a>. The project code is in <a href="https://github.com/ghostman5658/data-portfolio">data-portfolio</a>.</p>
+      </section>
+
+      <section class="notes" id="notes" aria-labelledby="notes-heading">
+        <h2 id="notes-heading">Repository notes</h2>
+        <p>The first version of this list pointed at private repositories and at folders that lived only on a local disk. Those course repositories stay private. They still hold weekly assignments, draft milestones, and files that should not be public, including a hardcoded Census API key that was removed before this copy was published.</p>
+        <p>What you can open is this subject-named repository. The full note on what was broken, left out, and renamed is in <a href="https://github.com/ghostman5658/data-portfolio/blob/main/CLEANUP.md">CLEANUP.md</a>.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">Kyle Gotzman · <a href="https://github.com/ghostman5658/data-portfolio">data-portfolio</a></div>
+  </footer>
+</body>
+</html>
